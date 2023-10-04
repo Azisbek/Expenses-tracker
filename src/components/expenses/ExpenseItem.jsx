@@ -1,20 +1,13 @@
-import React, { useState } from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import React from "react";
 
-const ExpenseItem = ({ title, price, date }) => {
-  const [text, setText] = useState(title);
-
-  const updateTitleHandler = () => {
-    setText("update");
-  };
-
+const ExpenseItem = ({ title, amount, date }) => {
   return (
     <div className="expense-item">
       <ExpenseDate date={date} />
-      <h2 className="expense-item">{text}</h2>
-      <div className="expense-item__price ">{price} $</div>
-      <button onClick={updateTitleHandler}>Update</button>
+      <h2 className="expense-item">{title}</h2>
+      <div className="expense-item__price ">{amount} $</div>
     </div>
   );
 };
