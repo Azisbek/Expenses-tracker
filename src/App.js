@@ -1,7 +1,7 @@
 import Expenses from "./components/Expenses";
 
 function App() {
-  const EXPENSES_DATE = [
+  const EXPENSES_DATA = [
     {
       id: "e1",
       title: "Car Insurance",
@@ -30,9 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      {EXPENSES_DATE.map((el) => {
-        return <Expenses title={el.title} price={el.amount} date={el.date} />;
-      })}
+      <Expenses expenses={EXPENSES_DATA} />;
     </div>
   );
 }

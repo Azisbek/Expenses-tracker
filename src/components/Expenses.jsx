@@ -1,9 +1,14 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
-const Expenses = ({ title, amount, date }) => {
+const Expenses = ({ expenses }) => {
   return (
     <div>
-      <ExpenseItem title={title} amount={amount} date={date} />
+      {expenses.map((el) => {
+        return (
+          <ExpenseItem title={el.title} amount={el.amount} date={el.date} />
+        );
+      })}
+      ;
     </div>
   );
 };
